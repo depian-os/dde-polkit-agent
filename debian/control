@@ -1,0 +1,32 @@
+Source: dde-polkit-agent
+Section: devel
+Priority: optional
+Maintainer: Deepin Packages Builder <packages@deepin.com>
+Build-Depends: debhelper (>=9),
+	pkg-config,
+	cmake,
+	libpolkit-qt6-1-dev,
+	libdtk6widget-dev,
+	libdtk6core-dev,
+	qt6-tools-dev,
+	qt6-tools-dev-tools,
+	libdtk6core-bin,
+	libdde-shell-dev,
+	lsb-release
+Standards-Version: 3.9.8
+Homepage: https://github.com/linuxdeepin/dde-polkit-agent
+
+Package: dde-polkit-agent
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+Description: PolicyKit agent for DDE.
+ PolicyKit agent is usually a dialog used to provide a way to let users
+ grant permission to specific actions, this package serves the role in
+ Deepin Desktop Environment.
+
+Package: dde-polkit-agent-dev
+Architecture: any
+Depends: dde-polkit-agent( =${binary:Version}),
+${shlibs:Depends}, ${misc:Depends}
+Description: development files of dde-polkit-agent extensions.
+ Development files of dde-polkit-agent extensions.
